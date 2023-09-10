@@ -313,9 +313,6 @@ img {
     letter-spacing: 0.02em;
 }
 .icons-card-networks {
-    
-}
-.icons-card-networks {
     display: flex;
     align-items: baseline;
     justify-content: center;
