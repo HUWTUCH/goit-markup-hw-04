@@ -212,12 +212,19 @@ img {
 .description-item {
     width: calc((100% - 72px) / 4);
 }
+.description-item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 112px;
+    background-color: #f4f4fd;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
 
 .description-icon {
     width: 264px;
-    height: 112px;
     padding: 23px 0 23px 0;
-    border-radius: 4px;
     background: linear-gradient(0deg, #F4F4FD, #F4F4FD),
     linear-gradient(0deg, #8E8F99, #8E8F99);
     border: 1px solid rgba(142, 143, 153, 1)
