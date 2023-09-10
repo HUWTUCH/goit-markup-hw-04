@@ -146,6 +146,7 @@ img {
 /* Main header */
 .main-header {
     display: flex;
+    max-width: 1440px;
     justify-content: center;
     background-color: #2e2f42;
     background-image: linear-gradient(
@@ -312,7 +313,7 @@ img {
     letter-spacing: 0.02em;
 }
 .icons-card-networks {
-
+    
 }
 .icons-card-networks {
     display: flex;
