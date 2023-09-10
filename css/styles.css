@@ -8,6 +8,7 @@ h1, h2, h3, h4, h5, h6, p {
     margin-top: 0;
     margin-bottom: 0;
 }
+
 ul, ol {
     margin-top: 0;
     margin-bottom: 0;
@@ -23,6 +24,7 @@ img {
     display: block;
     max-width: 100%;
 }
+
 .container {
     max-width: 1158px;
     padding-left: 15px;
@@ -30,16 +32,19 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
+
 /* Header */
 .header-container {
     padding-top: 30px;
     padding-bottom: 30px;
     border-bottom: 1px solid #e7e9fc
 }
+
 .page-header-container {
     display: flex;
     justify-content: space-between;
 }
+
 .logo-web, .studio {
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
@@ -57,17 +62,20 @@ img {
 .studio {
     color: #2E2F42;
 }
+
 /*Navigation*/
 .page-navigation {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 .nav-list {
     display: flex;
     margin-left: 77px;
     gap: 40px;
 }
+
 .nav-link {
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
@@ -76,21 +84,46 @@ img {
     line-height: 1.5;
     letter-spacing: 0.02em;
     padding: 24px 0;
+    position: relative; /* Додали позиціонування для ::after */
 }
 
 .nav-link:hover,
 .nav-link:focus {
     color: #404BBf;
-    text-decoration: underline;
 }
+
+.nav-link.active {
+    color: #404BBf; /* Змінено колір для активної сторінки */
+}
+
+.nav-link::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 2px;
+    background-color: #404BBf; /* Колір підкреслення для активної сторінки */
+    transform: scaleX(0); /* Додано початковий стан з нульовою шириною */
+    transform-origin: bottom left; /* Точка обертання внизу зліва */
+    transition: transform 0.3s ease; /* Анімація для підкреслення */
+    border-radius: 2px;
+}
+
+.nav-link.active::after {
+    transform: scaleX(1); /* Збільшуємо ширину підкреслення для активної сторінки */
+}
+
 /*Contacts*/
 .contacts {
     font-style: normal;
 }
+
 .contact-list {
     display: flex;
     gap: 40px;
 }
+
 .contacts-link {
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
@@ -110,6 +143,14 @@ img {
     display: flex;
     justify-content: center;
     background-color: #2e2f42;
+    background-image: linear-gradient(
+            rgba(46, 47, 66, 0.7),
+            rgba(46, 47, 66, 0.7)
+    ),
+    url('../images/background-img.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 188px 0;
     flex-shrink: 0;
 }
@@ -150,17 +191,31 @@ img {
 .description {
     padding: 120px 0;
 }
+
 .description-items {
     display: flex;
     justify-content: space-between;
     gap: 24px;
 }
+
 .description-title {
     margin-bottom: 8px;
 }
+
 .description-item {
     width: calc((100% - 72px) / 4);
 }
+
+.description-icon {
+    width: 264px;
+    height: 112px;
+    padding: 23px 0 23px 0;
+    border-radius: 4px;
+    background: linear-gradient(0deg, #F4F4FD, #F4F4FD),
+    linear-gradient(0deg, #8E8F99, #8E8F99);
+    border: 1px solid rgba(142, 143, 153, 1)
+}
+
 .visual-hidden {
     position: absolute;
     width: 1px;
@@ -189,11 +244,13 @@ img {
     padding: 120px 0;
     background-color: #F4F4FD;
 }
+
 .team-card-list {
     display: flex;
     justify-content: space-between;
     gap: 24px;
 }
+
 .our-team-cards {
     display: flex;
     justify-content: center;
@@ -212,9 +269,11 @@ img {
     background-color: #FFFFFF;
     border-radius: 0 0 4px 4px;
 }
+
 .employee-info-container {
     padding: 32px 0;
 }
+
 .name {
     text-align: center;
     margin-bottom: 8px;
@@ -235,12 +294,41 @@ img {
     line-height: 1.5;
     letter-spacing: 0.02em;
 }
+.icons-card-networks {
 
+}
+.icons-card-networks {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 24px;
+    margin: 11px 0 0 0;
+}
+.item-social-team {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color:rgba(77, 90, 229, 1);
+}
+.item-social-team:hover {
+    background-color: #31d0aa;
+}
+.item-social-team:focus {
+    background-color: #31d0aa;
+}
+
+.item-social-link-team {
+    fill: white;
+}
 /* Portfolio */
 .portfolio {
     display: flex;
     padding: 120px 0 120px 0;
 }
+
 .portfolio-title {
     display: flex;
     justify-content: center;
@@ -252,20 +340,51 @@ img {
     text-transform: capitalize;
     margin-bottom: 72px;
 }
+
 .portfolio-list-item {
     width: calc((100% - 48px) / 3);
 }
+.bestsellers-image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+.overlay {
+    position: absolute;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: rgba(244, 244, 253, 1);
+
+    padding: 45px 35px 33px 33px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(77, 90, 229, 1);
+    transform: translateY(100%);
+    transition: transform 250ms ease-out;
+}
+.bestsellers-list-link:hover .overlay,
+.bestsellers-list-link:focus .overlay {
+    transform: translateY(0%);
+}
+
 .portfolio-list {
     display: flex;
     flex-wrap: wrap;
     column-gap: 24px;
     row-gap: 48px;
 }
+
 .app-info-container {
     padding: 32px 16px;
     border: 1px solid #e7e9fc;
     border-top: none;
 }
+
 .portfolio-list-title {
     color: #2E2F42;
     font-size: 20px;
@@ -288,7 +407,44 @@ img {
     background-color: #2e2f42;
     padding: 100px 0;
 }
+.container-content-footer {
+    display: flex;
+    align-items: baseline;
 
+}
+.social-link {
+    margin-left: 124px;
+}
+.social-paragraph-footer {
+    color: white;
+    margin: 0 0 23px 0;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.list-socials-footer {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+}
+.list-social-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50% 50%;
+    background-color: rgba(77, 90, 229, 1);
+}
+.list-social-footer:hover {
+    background-color: #31d0aa;
+}
+.list-socials-footer:focus {
+    background-color: #31d0aa;
+}
+.item-social-link-footer {
+    fill: white;
+}
 .footer-logo {
     display: inline-block;
     font-family: "Raleway", sans-serif;
