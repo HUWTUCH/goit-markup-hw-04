@@ -438,12 +438,13 @@ img {
 .container-content-footer {
     display: flex;
     align-items: baseline;
-    margin-right: 120px
 
 }
-.social-link {
-    margin-left: 124px;
+.content-footer {
+    margin-right: 120px;
+
 }
+
 .social-paragraph-footer {
     color: white;
     margin-bottom: 16px;
@@ -465,6 +466,8 @@ img {
     height: 40px;
     border-radius: 50% 50%;
     background-color: rgba(77, 90, 229, 1);
+    transition: background-color 250ms
+    cubic-bezier(0.4, 0, 0.2, 1);
 }
 .list-social-footer:hover {
     background-color: #31d0aa;
@@ -473,7 +476,7 @@ img {
     background-color: #31d0aa;
 }
 .item-social-link-footer {
-    fill: white;
+    fill: #f4f4fd;
 }
 .footer-logo {
     display: inline-block;
